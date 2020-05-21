@@ -1,0 +1,50 @@
+<head>
+<title> todo list </title>
+<div style="background-image: url('https://avante.biz/wp-content/uploads/Light-Wallpaper/Light-Wallpaper-025.jpg');background-repeat: no-repeat;background-attachment: fixed;
+  background-size: cover;background-size: 100% 100%;">
+</head>
+<!-- <h1> this is the main page for the todo app. </h1> -->
+
+
+<!-- image try -->
+<iframe src="https://giphy.com/embed/bcKmIWkUMCjVm" width="200" height="300" frameBorder="0" class="giphy-embed" allowFullScreen style='float:right'></iframe><p>
+
+
+
+
+<h3 style="font-family:'Courier New'"> Welcome <cite>{{user.username}} </cite> here is your TodoList- &emsp;  &emsp; 
+	<hr style="height:1px;border-width:0;color:gray;background-color:black">
+	
+</h3>
+<ol>
+	{% for todo_item in all_items %}
+		<li> {{todo_item.content}} &nbsp;   &emsp;
+		<form action = '/deleteTodo/{{todo_item.id}}/' style = 'display : inline;' method = 'post' > {% csrf_token %}
+			<input type = 'submit' value = 'delete' style = "background-color:pink;height:20px; width:55px;border: 2px solid black">
+			<br ><br>
+		</form>
+		 </li>
+	{% endfor %}
+</ol>
+<hr style="height:1px;border-width:0;color:gray;background-color:black">
+<form action = '/addTodo/{{username}}' method = 'post'> {% csrf_token %}
+	<input type = 'text' name = 'content'/>&nbsp;
+	<input type = 'submit' value = 'add item'  style = "background-color:pink;height:19px; width:60px;border: 2px solid black">
+</form>
+<br> <br>
+<form action ="{% url 'start_page'%}" method = 'post' display : inline-block> {% csrf_token %}
+		<input type = 'submit' value = 'logout?'  style = "background-color:pink;height:20px; width:55px;border: 0.1px solid black;"/> </p>
+	</form>
+	
+	
+
+	
+	
+	
+<!-- ignore -->
+<br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+
+
