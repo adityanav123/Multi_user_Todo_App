@@ -1,0 +1,44 @@
+<head>
+<title> todo list </title>
+<div style="background-image: url('https://avante.biz/wp-content/uploads/Light-Wallpaper/Light-Wallpaper-025.jpg');background-repeat: no-repeat;background-attachment: fixed;
+  background-size: cover;background-size: 100% 100%;">
+</head>
+<!-- <iframe src="https://giphy.com/embed/bcKmIWkUMCjVm" width="200" height="300" frameBorder="0" class="giphy-embed" allowFullScreen style='float:right'></iframe><p> -->
+
+<iframe src="https://giphy.com/embed/OkJat1YNdoD3W" width="250" height="300" frameBorder="0" class="giphy-embed" allowFullScreen style='float:right' ></iframe><p>
+	
+	
+<body bgcolor ='pink'>
+<h1 style="font-family:'Courier New'"> Todo App </h1>
+{% if user.is_authenticated %}
+<title> logged in ! {{username}}  </title>
+<h4 style="font-family:Georgia"> <i>welcome!!! </i> </h4>
+
+	<h2> Your user-name is - <u>{{user.username}} </u> </h2>
+	<form action = 'accounts/logout' style = 'display : inline'>
+		{%csrf_token%}
+		<input type = 'submit' value = 'logout?'  style = "background-color:pink;height:25px; width:100px;border: 0.2px solid black"/>
+	</form> &emsp; &emsp; &emsp; &emsp; 
+	<form action = "todo/{{user.username}}" style = 'display : inline'>
+		{% csrf_token%}
+		<input type = 'submit' value = 'redirect to the app?'  style = "background-color:pink;height:25px; width:120px;border: 0.2px solid black">
+	</form>
+{% else %}
+
+<q> you are not logged in !!</q> <br> <br>
+<title> User not signed in </title>
+<form action = 'accounts/login/' method = 'post' style = 'display : inline;'> {%csrf_token%}
+	<input type = 'submit' value = 'login?' style = "background-color:pink;height:30px; width:90px;border: 0.2px solid black"/>
+</form>
+&emsp;&emsp;&emsp;&emsp;
+<form action ="register/" method = 'post' style = 'display : inline;'> {%csrf_token%}
+	<input type = 'submit' value = 'new user?'  style = "background-color:pink;height:30px; width:90px;border: 0.2px solid black" />
+</form>
+{%endif%}
+
+<!-- ignore -->
+<br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+</body>

@@ -1,0 +1,23 @@
+<head>
+<!-- <title> todo list </title> -->
+<div style="background-image: url('https://avante.biz/wp-content/uploads/Light-Wallpaper/Light-Wallpaper-025.jpg');background-repeat: no-repeat;background-attachment: fixed;
+  background-size: cover;background-size: 100% 100%;">
+</head>
+<title> Welcome new user!. </title>
+<body>
+<h3><i> Registration -  </i></h3>
+<form action = "{% url 'register' %}" method = 'post'>
+	{%csrf_token%}
+	<!-- {% if form.errors %}
+	<p> there are errors in the form! </p>
+	{% endif %} -->
+
+	{{form}}
+	<input type = 'submit' value = 'register' style = "background-color:pink;height:25px; width:100px;border: 2px solid black">
+</body>
+
+
+<!-- ignore -->
+<br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+<br> <br> <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
